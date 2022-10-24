@@ -1,0 +1,28 @@
+pydata-sphinx-theme (0.7.1-2) unstable; urgency=medium
+
+  * debian/control
+    - temporarily comment out jupyter-sphinx b-d, to be re-enable when
+      ipywidget 7 is in the archive
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 24 Oct 2021 11:12:10 -0400
+
+pydata-sphinx-theme (0.7.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * debiab/watch
+    - track github releases
+  * temporarily disable building doc until ipywidgets is updated to 7
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 23 Oct 2021 11:28:38 -0400
+
+pydata-sphinx-theme (0.5.0-2) unstable; urgency=medium
+
+  * source-only upload
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 02 Apr 2021 00:38:50 -0400
+
+pydata-sphinx-theme (0.5.0-1) unstable; urgency=low
+
+  * Initial release; Closes: #985035
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 12 Mar 2021 23:13:07 -0500
