@@ -1,3 +1,26 @@
+pydata-sphinx-theme (0.7.2-3) unstable; urgency=medium
+
+  * Drop -doc package; Closes: #997076, #1031966
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 02 Mar 2023 00:46:25 -0500
+
+pydata-sphinx-theme (0.7.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * debian patch distutils_deprecated_PR590.patch adapts upstream
+    PR#590 to replace deprecated distutils, otherwise the
+    DeprecationWarning with python3.10 causes an error in sphinx.
+    Depends: python3-packaging.  Closes: #1008680.
+  * Standards-Version: 4.6.0
+
+ -- Drew Parsons <dparsons@debian.org>  Mon, 04 Apr 2022 02:18:28 +0200
+
+pydata-sphinx-theme (0.7.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 09 Dec 2021 00:32:36 -0500
+
 pydata-sphinx-theme (0.7.1-2) unstable; urgency=medium
 
   * debian/control
