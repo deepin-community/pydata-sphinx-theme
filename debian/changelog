@@ -1,3 +1,105 @@
+pydata-sphinx-theme (0.16.1+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update dependencies according to upstream pyproject.toml changes:
+    - Set minimum required python3-sphinx version to 6.1.
+    - Remove python3-packaging from Build-Depends and Depends.
+  * Refresh patches for the new release.
+  * Take the prebuilt CSS files from upstream wheel, until we have dart-sass
+    packaged in Debian (see #998024).
+    - Add debian/prebuilt/update.sh script to download/update the files.
+    - Drop 002.reduce-js-deps.patch, no longer needed.
+  * Add symlinks to Font Awesome JS, CSS and font files.
+  * Build JS from source code using webpack.
+    - Add 002.no-build-css.patch to remove CSS parts of webpack, and to use
+      dependencies from /usr/share/node_modules.
+    - Add webpack and some plugins to build-dependencies.
+  * Make sure dist-info has correct package version instead of 0.0.0.
+  * Add more files to debian/clean.
+  * Remove debian/missing-sources/*, as we do not have prebuilt JS anymore.
+  * Update debian/copyright.
+  * Do not skip tests/test_build.py during build.
+  * Fix the code to remove .gitignore file.
+  * Add build-dependencies for the tests:
+    - python3-accessible-pygments
+    - python3-pytest-regressions
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 27 Jan 2025 22:17:19 +0300
+
+pydata-sphinx-theme (0.15.4+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Alexandre Detiste ]
+  * Simplify d/rules.
+  * Remove duplicate build-dependency.
+
+  [ Rebecca N. Palmer ]
+  * Install missing files.  Closes: #1084781
+  * Disable webpack-macros, as its build-dependencies are
+    not in Debian (see #1084781).
+  * Recommend python3-accessible-pygments.
+  * Add autopkgtest.
+
+  [ Gianfranco Costamagna ]
+  * Upload to sid
+
+ -- Rebecca N. Palmer <rebecca_palmer@zoho.com>  Mon, 21 Oct 2024 19:50:21 +0100
+
+pydata-sphinx-theme (0.15.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 0.15.4+dfsg
+  * debian/clean: Added build artifacts
+  * debian/control:
+     - Added build-depends required for compilation
+     - Bumped Standards-Version to 4.7.0
+     - Adeed new uploaders: Alexandre Detiste and Josenilson Ferreira da Silva
+  * debian/copyright:
+     - Files removed in New upstream version
+     - Update and include the name of new maintainers
+  * debian/rules:
+     - Fixed lintian package-contains-vcs-control-file
+     - Tests depend on files that are not in Debian
+  * debian/source/lintian-overrides: Files removed with new version
+  * debian/watch: File deleted because it is not compatible with DFSG
+
+ -- Josenilson Ferreira da Silva <nilsonfsilva@hotmail.com>  Sat, 10 Aug 2024 08:28:16 -0300
+
+pydata-sphinx-theme (0.15.2-1) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Upload to sid
+
+  [ Sandro Tosi ]
+  * debian/copyright
+    - extend packaging copyright years
+  * debian/patches/
+    - remove patches, merged upstream
+
+  [ Debian Janitor ]
+  * Update lintian override info format in d/source/lintian-overrides on
+    line 2, 4.
+
+  [ Andreas Tille ]
+  * QA upload
+  * New upstream release
+    Closes: #1033028
+  * Standards-Version: 4.6.2 (routine-update)
+  * Testsuite: autopkgtest-pkg-python (routine-update)
+  * Build-Depends: s/dh-python/dh-sequence-python3/ (routine-update)
+  * Rules-Requires-Root: no (routine-update)
+  * Build-Depends: pybuild-plugin-pyproject
+  * Add upstream metadata
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 23 Apr 2024 08:37:13 +0200
+
+pydata-sphinx-theme (0.7.2-4) unstable; urgency=medium
+
+  * orphan
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 02 Mar 2024 16:01:49 -0500
+
 pydata-sphinx-theme (0.7.2-3) unstable; urgency=medium
 
   * Drop -doc package; Closes: #997076, #1031966

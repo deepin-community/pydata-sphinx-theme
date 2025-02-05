@@ -1,3 +1,5 @@
+"""Test conf file."""
+
 # -- Project information -----------------------------------------------------
 
 project = "Test"
@@ -6,7 +8,7 @@ author = "Test"
 
 # -- General configuration ---------------------------------------------------
 
-master_doc = "index"
+root_doc = "index"
 
 # -- Options for HTML output -------------------------------------------------
 

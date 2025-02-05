@@ -1,28 +1,41 @@
 Source: pydata-sphinx-theme
 Section: python
+Testsuite: autopkgtest-pkg-python
 Priority: optional
-Maintainer: Sandro Tosi <morph@debian.org>
-Uploaders: Debian Python Team <team+python@tracker.debian.org>,
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Alexandre Detiste <tchet@debian.org>, Josenilson Ferreira da Silva <nilsnfsilva@hotmail.com>
 Build-Depends: debhelper-compat (= 13),
-               dh-python,
+               dh-sequence-python3,
+               node-bootstrap (>= 5.3.3+dfsg-3~),
+               node-compare-versions,
+               node-fortawesome-fontawesome-free,
+               node-html-webpack-plugin,
+               node-popper2,
+               pybuild-plugin-pyproject,
+               python3-accessible-pygments <!nocheck>,
                python3-all,
+               python3-babel,
                python3-bs4 <!nocheck>,
-               python3-packaging,
+               python3-pytest <!nocheck>,
+               python3-pytest-regressions <!nocheck>,
                python3-setuptools,
-               python3-sphinx <!nocheck>,
-#               python3-pytest <!nocheck>,
-Standards-Version: 4.6.0
+               python3-setuptools-scm,
+               python3-sphinx (>= 6.1) <!nocheck>,
+               python3-typing-extensions,
+               webpack
+Standards-Version: 4.7.0
 Homepage: https://github.com/pydata/pydata-sphinx-theme
+Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/python-team/packages/pydata-sphinx-theme.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/pydata-sphinx-theme
 
 Package: python3-pydata-sphinx-theme
 Architecture: all
-Depends: python3-packaging,
+Depends: node-fortawesome-fontawesome-free,
          ${misc:Depends},
-         ${python3:Depends},
-Recommends: ${python3:Recommends},
-Suggests: ${python3:Suggests},
+         ${python3:Depends}
+Recommends: ${python3:Recommends}, python3-accessible-pygments
+Suggests: ${python3:Suggests}
 Description: bootstrap-based Sphinx theme from the PyData community
  Originally developed for the pandas docs, work is being done to make this more
  generic and more easily extensible to suit the needs of the different projects;
