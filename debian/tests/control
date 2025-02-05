@@ -1,0 +1,3 @@
+Tests: upstreamtests
+Depends: @, python3-pytest, python3-accessible-pygments, python3-pytest-regressions
+Restrictions: allow-stderr

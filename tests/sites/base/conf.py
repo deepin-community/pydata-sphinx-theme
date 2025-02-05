@@ -1,10 +1,12 @@
+"""Test conf file."""
+
 # -- Project information -----------------------------------------------------
 
 project = "PyData Tests"
 copyright = "2020, Pydata community"
 author = "Pydata community"
 
-master_doc = "index"
+root_doc = "index"
 
 # -- General configuration ---------------------------------------------------
 
@@ -13,11 +15,9 @@ master_doc = "index"
 # ones.
 extensions = []
 html_theme = "pydata_sphinx_theme"
-html_logo = "emptylogo.png"
+html_logo = "_static/emptylogo.png"
 html_copy_source = True
 html_sourcelink_suffix = ""
 
 # Base options, we can add other key/vals later
-html_theme_options = {}
-
 html_sidebars = {"section1/index": ["sidebar-nav-bs.html"]}

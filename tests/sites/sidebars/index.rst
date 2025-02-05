@@ -12,3 +12,7 @@ Sidebar depth variations
 
    section2/index
 
+Other content
+-------------
+
+This is some other content.
