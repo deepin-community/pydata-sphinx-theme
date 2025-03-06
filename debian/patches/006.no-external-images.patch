@@ -1,0 +1,235 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Sat, 1 Feb 2025 16:41:58 +0300
+Subject: Remove use of external images from the docs
+
+Forwarded: not-needed
+---
+ docs/community/contributors.md           |  9 ---------
+ docs/community/inspiration.md            | 32 +++++++-------------------------
+ docs/examples/kitchen-sink/generic.rst   |  4 ++--
+ docs/examples/kitchen-sink/images.rst    | 12 ++++++------
+ docs/examples/kitchen-sink/lists.rst     |  4 ++--
+ docs/examples/kitchen-sink/structure.rst |  2 +-
+ docs/examples/kitchen-sink/tables.rst    |  4 ++--
+ docs/user_guide/light-dark.rst           |  8 ++++----
+ 8 files changed, 24 insertions(+), 51 deletions(-)
+
+diff --git a/docs/community/contributors.md b/docs/community/contributors.md
+index e9bd635..c2c837c 100644
+--- a/docs/community/contributors.md
++++ b/docs/community/contributors.md
+@@ -2,15 +2,6 @@
+ 
+ This theme is supported and developed by various members of [the PyData community](https://pydata.org).
+ 
+-## Collaborators on the repository
+-
+-Here is a grid of collaborators on our GitHub repository.
+-We don't yet have formal "team definitions" so this is mostly a reflection of who has commit rights to the repository.
+-
+-```{gallery-grid} ../_static/contributors.yaml
+-:class-card: text-center
+-```
+-
+ ## Financial support
+ 
+ Support and development for this theme has been funded by one [NumFocus Small Development Grant](https://numfocus.org/programs/small-development-grants) on behalf of several communities in the PyData ecosystem.
+diff --git a/docs/community/inspiration.md b/docs/community/inspiration.md
+index 91f017d..ba3f478 100644
+--- a/docs/community/inspiration.md
++++ b/docs/community/inspiration.md
+@@ -3,28 +3,10 @@
+ To build this theme we drew inspiration from other great projects on the web that we would like to acknowledge here.
+ When making new decisions about design and UI/UX, we often consult these themes to see what they're doing.
+ 
+-```{gallery-grid}
+-:grid-columns: 1 2 2 3
+-:class-container: text-center
+-- title: "**GitBook**"
+-  link: https://docs.gitbook.com/
+-  image: https://avatars.githubusercontent.com/u/7111340?s=280&v=4
+-- title: "**Metaflow**"
+-  image: https://repository-images.githubusercontent.com/209120637/00b39080-1ddc-11ea-8710-59b484540700
+-  link: https://docs.metaflow.org/
+-- title: "**Furo**"
+-  image: https://avatars.githubusercontent.com/u/3275593?v=4
+-  link: https://pradyunsg.me/furo/quickstart
+-- title: "**Docker**"
+-  link: https://docs.docker.com/
+-  image: https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png
+-- title: "**PyTorch**"
+-  link: https://pytorch.org/docs/stable/index.html
+-  image: https://pytorch.org/assets/images/pytorch-logo.png
+-- title: "**Docasaurus**"
+-  link: https://docusaurus.io/docs
+-  image: https://d33wubrfki0l68.cloudfront.net/c088b7acfcf11100903c44fe44f2f2d7e0f30531/47727/img/docusaurus.svg
+-- title: "**Material for MkDocs**"
+-  link: https://squidfunk.github.io/mkdocs-material/getting-started/
+-  image: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/src/.icons/logo.svg
+-```
++- [GitBook](https://docs.gitbook.com/)
++- [Metaflow](https://docs.metaflow.org/)
++- [Furo](https://pradyunsg.me/furo/quickstart)
++- [Docker](https://docs.docker.com/)
++- [PyTorch](https://pytorch.org/docs/stable/index.html)
++- [Docasaurus](https://docusaurus.io/docs)
++- [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
+diff --git a/docs/examples/kitchen-sink/generic.rst b/docs/examples/kitchen-sink/generic.rst
+index ac86334..60f9f28 100644
+--- a/docs/examples/kitchen-sink/generic.rst
++++ b/docs/examples/kitchen-sink/generic.rst
+@@ -3,7 +3,7 @@
+    Licensed under Creative Commons Attribution-ShareAlike 4.0 International License
+    SPDX-License-Identifier: CC-BY-SA-4.0
+ 
+-.. |EXAMPLE| image:: https://source.unsplash.com/32x32/daily?icon
++.. |EXAMPLE| image:: ../../_static/logo.svg
+     :width: 1em
+ 
+ =============
+@@ -110,7 +110,7 @@ Sidebar
+ 
+     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+ 
+-    .. image:: https://source.unsplash.com/200x200/daily?cute+puppy
++    .. image:: ../../_static/logo.svg
+ 
+     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+ 
+diff --git a/docs/examples/kitchen-sink/images.rst b/docs/examples/kitchen-sink/images.rst
+index ecb7164..ae0bac2 100644
+--- a/docs/examples/kitchen-sink/images.rst
++++ b/docs/examples/kitchen-sink/images.rst
+@@ -12,18 +12,18 @@ Images
+ 
+ An image:
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. image:: ../../_static/logo.svg
+    :height: 200
+    :width: 200
+ 
+ A clickable image:
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. image:: ../../_static/logo.svg
+    :target: https://unsplash.com/
+    :height: 200
+    :width: 200
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. image:: ../../_static/logo.svg
+    :align: right
+    :height: 200
+    :width: 200
+@@ -43,7 +43,7 @@ sapiente veritatis doloribus accusantium molestiae modi recusandae
+ excepturi facere, corrupti expedita sit nihil temporibus eius sequi
+ animi, illo libero labore fuga.
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. image:: ../../_static/logo.svg
+    :align: left
+    :height: 200
+    :width: 200
+@@ -66,7 +66,7 @@ animi, illo libero labore fuga.
+ Figures
+ -------
+ 
+-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. figure:: ../../_static/logo.svg
+    :alt: reStructuredText, the markup syntax
+ 
+    A figure is an image with a caption and/or a legend:
+@@ -83,7 +83,7 @@ Figures
+ 
+ A figure directive with center alignment
+ 
+-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. figure:: ../../_static/logo.svg
+    :align: center
+ 
+    This caption should be centered.
+diff --git a/docs/examples/kitchen-sink/lists.rst b/docs/examples/kitchen-sink/lists.rst
+index dd9f920..30e459e 100644
+--- a/docs/examples/kitchen-sink/lists.rst
++++ b/docs/examples/kitchen-sink/lists.rst
+@@ -246,11 +246,11 @@ Hlists
+ .. hlist::
+     :columns: 2
+ 
+-    - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++    - .. figure:: ../../_static/logo.svg
+ 
+          This is a short caption for a figure.
+ 
+-    - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++    - .. figure:: ../../_static/logo.svg
+ 
+          This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+diff --git a/docs/examples/kitchen-sink/structure.rst b/docs/examples/kitchen-sink/structure.rst
+index 6a7d709..69b4a7e 100644
+--- a/docs/examples/kitchen-sink/structure.rst
++++ b/docs/examples/kitchen-sink/structure.rst
+@@ -83,7 +83,7 @@ luctus efficitur arcu. Cras ut dictum mi. Nulla congue interdum lorem, semper se
+ Document Subsection
+ -------------------
+ 
+-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++.. figure:: ../../_static/logo.svg
+     :align: right
+     :figwidth: 200px
+ 
+diff --git a/docs/examples/kitchen-sink/tables.rst b/docs/examples/kitchen-sink/tables.rst
+index 6c2b91b..46023ef 100644
+--- a/docs/examples/kitchen-sink/tables.rst
++++ b/docs/examples/kitchen-sink/tables.rst
+@@ -97,11 +97,11 @@ List Tables
+ 
+ .. list-table:: This is a list table with images in it.
+ 
+-    * - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++    * - .. figure:: ../../_static/logo.svg
+ 
+            This is a short caption for a figure.
+ 
+-      - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
++      - .. figure:: ../../_static/logo.svg
+ 
+            This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+diff --git a/docs/user_guide/light-dark.rst b/docs/user_guide/light-dark.rst
+index 389278b..46fd8f9 100644
+--- a/docs/user_guide/light-dark.rst
++++ b/docs/user_guide/light-dark.rst
+@@ -112,10 +112,10 @@ Change the theme and a new image should be displayed.
+             :class: only-light
+             ```
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+cat
++.. image:: ../../_static/logo.svg
+     :class: only-dark
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+dog
++.. image:: ../../_static/logo.svg
+     :class: only-light
+ 
+ Images and content that work in both themes
+@@ -151,7 +151,7 @@ Change to the dark theme and a grey background will be present.
+             ```
+ 
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+cat
++.. image:: ../../_static/logo.svg
+     :class: p-2
+ 
+ Here's the same image with this class added:
+@@ -173,7 +173,7 @@ Here's the same image with this class added:
+             :class: dark-light p-2
+             ```
+ 
+-.. image:: https://source.unsplash.com/200x200/daily?cute+cat
++.. image:: ../../_static/logo.svg
+     :class: dark-light p-2
+ 
+ Define custom JavaScript to react to theme changes

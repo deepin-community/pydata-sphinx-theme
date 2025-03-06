@@ -1,0 +1,66 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Fri, 31 Jan 2025 19:36:22 +0300
+Subject: Remove some unpackaged and unused dependencies from the docs
+
+Forwarded: not-needed
+---
+ docs/conf.py | 24 +-----------------------
+ 1 file changed, 1 insertion(+), 23 deletions(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index afab813..a8d6cca 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -45,13 +45,7 @@ extensions = [
+     "_extension.component_directive",
+     # For extension examples and demos
+     "myst_parser",
+-    "ablog",
+-    "jupyter_sphinx",
+-    "sphinxcontrib.youtube",
+-    "nbsphinx",
+     "numpydoc",
+-    "sphinx_togglebutton",
+-    "jupyterlite_sphinx",
+     "sphinx_favicon",
+ ]
+ 
+@@ -199,7 +193,7 @@ html_theme_options = {
+     # "show_nav_level": 2,
+     "announcement": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_templates/custom-template.html",
+     "show_version_warning_banner": True,
+-    "navbar_center": ["version-switcher", "navbar-nav"],
++    "navbar_center": ["navbar-nav"],
+     # "navbar_start": ["navbar-logo"],
+     # "navbar_end": ["theme-switcher", "navbar-icon-links"],
+     # "navbar_persistent": ["search-button"],
+@@ -212,10 +206,6 @@ html_theme_options = {
+         "**/*": ["page-toc", "edit-this-page", "sourcelink"],
+         "examples/no-sidebar": [],
+     },
+-    "switcher": {
+-        "json_url": json_url,
+-        "version_match": version_match,
+-    },
+     # "back_to_top_button": False,
+ }
+ 
+@@ -226,18 +216,6 @@ html_sidebars = {
+     ],  # This ensures we test for custom sidebars
+     "examples/no-sidebar": [],  # Test what page looks like with no sidebar items
+     "examples/persistent-search-field": ["search-field"],
+-    # Blog sidebars
+-    # ref: https://ablog.readthedocs.io/manual/ablog-configuration-options/#blog-sidebars
+-    "examples/blog/*": [
+-        "ablog/postcard.html",
+-        "ablog/recentposts.html",
+-        "ablog/tagcloud.html",
+-        "ablog/categories.html",
+-        "ablog/authors.html",
+-        "ablog/languages.html",
+-        "ablog/locations.html",
+-        "ablog/archives.html",
+-    ],
+ }
+ 
+ html_context = {

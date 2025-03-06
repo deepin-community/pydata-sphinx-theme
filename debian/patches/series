@@ -1,1 +1,7 @@
-distutils_deprecated_PR590.patch
+001.disable-nodeenv.patch
+002.no-build-css.patch
+003.reduce-docs-dependencies.patch
+004.no-custom-icon.patch
+005.reproducible-docs.patch
+006.no-external-images.patch
+007.use-packaged-mathjax.patch

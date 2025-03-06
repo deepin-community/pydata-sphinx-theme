@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+testdir="$PWD/tests/"
+# not from the source directory so we don't import it
+cd $AUTOPKGTEST_TMP
+
+python3 -m pytest $testdir

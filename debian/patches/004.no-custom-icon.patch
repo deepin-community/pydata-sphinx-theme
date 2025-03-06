@@ -1,0 +1,33 @@
+From: Dmitry Shachnev <mitya57@debian.org>
+Date: Fri, 31 Jan 2025 21:35:50 +0300
+Subject: Do not use custom-icon.js
+
+We exclude it from the tarball.
+
+Forwarded: not-needed
+---
+ docs/conf.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index a8d6cca..bb659e2 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -171,7 +171,7 @@ html_theme_options = {
+         {
+             "name": "PyPI",
+             "url": "https://pypi.org/project/pydata-sphinx-theme",
+-            "icon": "fa-custom fa-pypi",
++            "icon": "fa-brands fa-python",
+         },
+         {
+             "name": "PyData",
+@@ -234,7 +234,7 @@ rediraffe_redirects = {
+ # so a file named "default.css" will overwrite the builtin "default.css".
+ html_static_path = ["_static"]
+ html_css_files = ["custom.css"]
+-html_js_files = ["pydata-icon.js", "custom-icon.js"]
++html_js_files = ["pydata-icon.js"]
+ todo_include_todos = True
+ 
+ # -- favicon options ---------------------------------------------------------

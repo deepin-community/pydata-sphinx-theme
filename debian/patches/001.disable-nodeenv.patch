@@ -1,0 +1,27 @@
+From: Josenilson Ferreira da Silva <nilsonfsilva@hotmail.com>
+Date: Tue, 24 Dec 2024 16:14:32 +0300
+Subject: Do not use sphinx-theme-builder
+
+Forwarded: not-needed
+Last-Update: 2024-12-24
+---
+ pyproject.toml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index f8b2eb2..7364d59 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,8 +1,8 @@
+ [build-system]
+-requires = [
+-  "sphinx-theme-builder @ https://github.com/pradyunsg/sphinx-theme-builder/archive/87214d0671c943992c05e3db01dca997e156e8d6.zip",
+-]
+-build-backend = "sphinx_theme_builder"
++requires = ["setuptools>=42", "wheel"]
++
++[tool.setuptools.dynamic]
++version = {attr = "pydata_sphinx_theme.__version__"}
+ 
+ [tool.sphinx-theme-builder]
+ node-version = "22.9.0"
