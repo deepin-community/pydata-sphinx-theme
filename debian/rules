@@ -1,7 +1,45 @@
 #! /usr/bin/make -f
-
 export DH_VERBOSE=1
 
+include /usr/share/dpkg/pkg-info.mk
+
+prebuilt_version = $(shell cat debian/prebuilt/version)
+ifneq ($(DEB_VERSION_UPSTREAM:+dfsg=), $(prebuilt_version))
+    $(error Please run ./debian/prebuilt/update.sh to update CSS for the new version.)
+endif
+
+# intentionally break networking, as using it is against policy and nodeenv/npm may try to download modules
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+
+export PYBUILD_BEFORE_TEST=cp -r src/pydata_sphinx_theme {build_dir}
+export PYBUILD_TEST_ARGS=-v
 export PYBUILD_NAME=pydata-sphinx-theme
+
 %:
-	dh $@ --with python3 --buildsystem=pybuild
+	dh $@ --buildsystem=pybuild
+
+execute_before_dh_auto_build:
+	pybabel compile -d $(CURDIR)/src/pydata_sphinx_theme/locale -D sphinx
+	ln -s /usr/share/node_modules .
+	webpack
+	cp -a debian/prebuilt/styles src/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/
+
+ifeq (,$(filter nodoc,$(DEB_BUILD_OPTIONS)))
+execute_after_dh_auto_build:
+	PYTHONPATH=$(CURDIR)/src sphinx-build -N -E -T -b html $(CURDIR)/docs $(CURDIR)/.pybuild/docs/html
+	rm -rf $(CURDIR)/.pybuild/docs/html/.doctrees
+
+theme_static=/usr/lib/python3/dist-packages/pydata_sphinx_theme/theme/pydata_sphinx_theme/static
+docs_static=$(CURDIR)/debian/python-pydata-sphinx-theme-doc/usr/share/doc/python-pydata-sphinx-theme-doc/html/_static
+
+execute_before_dh_link:
+	set -eu; cd $(CURDIR)/debian/python3-pydata-sphinx-theme$(theme_static); find -type f -or -type l | while read f; do \
+		if cmp -s $$f $(docs_static)/$$f; then \
+			ln -sfv $(theme_static)/$$f $(docs_static)/$$f; \
+		fi \
+	done
+
+override_dh_compress:
+	dh_compress -Xpython-pydata-sphinx-theme-doc/html
+endif

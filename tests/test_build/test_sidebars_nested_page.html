@@ -1,5 +1,8 @@
-<nav aria-label="Main navigation" class="bd-links" id="bd-docs-nav">
- <div class="bd-toc-item active">
+<nav aria-label="Section Navigation" class="bd-docs-nav bd-links">
+ <p aria-level="1" class="bd-links__title" role="heading">
+  Section Navigation
+ </p>
+ <div class="bd-toc-item navbar-nav">
   <p aria-level="2" class="caption" role="heading">
    <span class="caption-text">
     Section 1
@@ -10,11 +13,13 @@
     <a class="reference internal" href="index.html">
      Subsection 1.1 index
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
-     <label for="toctree-checkbox-1">
-      <i class="fas fa-chevron-down">
-      </i>
-     </label>
+    <details open="open">
+     <summary>
+      <span class="toctree-toggle" role="presentation">
+       <i class="fa-solid fa-chevron-down">
+       </i>
+      </span>
+     </summary>
      <ul class="current">
       <li class="toctree-l2 current active">
        <a class="current reference internal" href="#">
@@ -27,7 +32,7 @@
        </a>
       </li>
      </ul>
-    </input>
+    </details>
    </li>
    <li class="toctree-l1">
     <a class="reference internal" href="../page2.html">
